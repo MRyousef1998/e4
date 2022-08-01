@@ -20,6 +20,9 @@ class UserApiResource extends JsonResource
             'last_name'=>$this->last_name,
             'formated_name'=>$this->formattedName(),
             'email'     =>$this->email,
+            'phone'     =>$this->mobile,
+            'role'     =>$this->role(),
+            'wallet'     =>$this->wallet,
             'api_token' =>$this->api_token
 
 
