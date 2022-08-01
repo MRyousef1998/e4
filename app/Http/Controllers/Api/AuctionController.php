@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\Auction;
 use Illuminate\Http\Request;
+use App\Models\User;
+use App\Http\Resources\UserResource;
 use App\Http\Resources\AuctionResource;
 use Illuminate\Support\Facades\Auth;
 use App\Models\AuctionBidder;
@@ -78,7 +80,7 @@ class AuctionController extends Controller
         
         }
         return [
-            'auction_bidder'=>$finalCartItems ,   
+            'auction_bidder'=>$finalbidderItems ,   
              'id'=>number_format(intval( $auctions->id)),
               // 'total'=>number_format(doubleval($cart-> total),2) ,
             ];
