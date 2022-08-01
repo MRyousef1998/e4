@@ -56,7 +56,7 @@ class AuthController extends Controller
           $user->api_token=$token->plainTextToken;
           $user->save();
          
-          //return new UserApiResource($user);
+         return new UserApiResource($user);
            if($user != null){
             //App\Http\Controllers\Api\MailController::sendSingupEmail($user->first_name, $user->email, $user->verification_code);
            
