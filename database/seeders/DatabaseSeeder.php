@@ -12,7 +12,7 @@ class DatabaseSeeder extends Seeder
      * @return void
      */
     public function run()
-    { \App\Models\Favorite::factory(20)->create();
+    {// \App\Models\Favorite::factory(20)->create();
        \App\Models\User::factory(100)->create();
         \App\Models\Address::factory(100)->create();
         \App\Models\Auction::factory(100)->create();
