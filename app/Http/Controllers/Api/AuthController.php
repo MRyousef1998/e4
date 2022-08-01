@@ -56,34 +56,34 @@ class AuthController extends Controller
           $user->api_token=$token->plainTextToken;
           $user->save();
          
-          return new UserApiResource($user);
-  //          if($user != null){
-  //           //App\Http\Controllers\Api\MailController::sendSingupEmail($user->first_name, $user->email, $user->verification_code);
+          //return new UserApiResource($user);
+           if($user != null){
+            //App\Http\Controllers\Api\MailController::sendSingupEmail($user->first_name, $user->email, $user->verification_code);
            
            
-  //           $data = [
-  //               'name' => $user->first_name,
-  //               'verification_code' => $user->verification_code
-  //           ];
-  //          Mail::to($user->email)->send(new \App\Mail\SinupEmail($data));
+            $data = [
+                'name' => $user->first_name,
+                'verification_code' => $user->verification_code
+            ];
+           Mail::to($user->email)->send(new \App\Mail\SinupEmail($data));
       
          
-  //          // Mail::to($user->email)->send(new SinupEmail($data));
+           // Mail::to($user->email)->send(new SinupEmail($data));
            
            
-  //           $message = [
-  //               'error'=>false,
-  //             'message'=>'we send code to verifiction'
-  //           ];
-  //           return response($message,200);
-  //       }
+            $message = [
+                'error'=>false,
+              'message'=>'we send code to verifiction'
+            ];
+            return response($message,200);
+        }
 
         
-  //       $message = [
-  //           'error'=>true,
-  //         'message'=>'some thing rong'
-  //       ];
-  //  return response($message,404);
+        $message = [
+            'error'=>true,
+          'message'=>'some thing rong'
+        ];
+   return response($message,404);
 
 
            
