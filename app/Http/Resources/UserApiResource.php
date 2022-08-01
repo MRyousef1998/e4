@@ -21,7 +21,7 @@ class UserApiResource extends JsonResource
             'formated_name'=>$this->formattedName(),
             'email'     =>$this->email,
             'phone'     =>$this->mobile,
-            'role'     =>$this->role(),
+            'role'     =>$this->role()->role_name,
             'wallet'     =>$this->wallet,
             'api_token' =>$this->api_token
 
