@@ -29,6 +29,7 @@ class AuthController extends Controller
            
                 'first_name' => ['required'],
                 'last_name' => ['required'],
+                'phone' => ['required'],
                 'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
                 'password' => ['required', 'string', 'min:8'], ]);
         
@@ -39,6 +40,8 @@ class AuthController extends Controller
            $user-> email = $request->input('email');
            $user-> password = Hash::make($request->input('password'));
            $user->verification_code = sha1(time());
+        $user-> mobile = $request->input('phone');
+        
            $user->save();
            $credentials =$request->only('email','password');
            if(Auth::attempt($credentials)){
