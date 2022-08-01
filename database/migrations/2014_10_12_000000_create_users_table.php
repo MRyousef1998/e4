@@ -26,7 +26,7 @@ class CreateUsersTable extends Migration
             $table->bigInteger('billing_address')->nullable();
             $table->bigInteger('role_id')->nullable();
             $table->string('api_token');
-            $table->text('image_url ');
+            $table->string('image_url ')->nullable();
 
 
             $table->rememberToken();
