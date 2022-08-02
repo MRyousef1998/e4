@@ -67,11 +67,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
   return $user;
 });
 
-Route::middleware('auth:sanctum')->group( function () {
-
 Route::get('auctions/{auction}/bidder', [AuctionController::class, 'showBidder']);
    
 Route::post('auctions/bid', [AuctionController::class, 'AddBidder']);
+
+Route::middleware('auth:sanctum')->group( function () {
+
   
  
 });
